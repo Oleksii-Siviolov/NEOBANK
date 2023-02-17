@@ -1,17 +1,13 @@
 import LoginPageObject from "../support/pages/login.PageObject"
 
+import { testData } from "../support/testData";
+
 /// <reference types="../support" />
 
 const loginPage = new LoginPageObject;
 
 describe('Neobank start page', () => {
-  let data;
-  
-  before(() => {
-    cy.task('generateData').then(generateData => {
-      data = generateData;
-    });
-  });
+  let data = testData;
 
   it('should check login user flow', () => {
 
